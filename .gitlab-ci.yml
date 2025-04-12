@@ -1,0 +1,12 @@
+image: node:18
+
+pages:
+  script:
+    - npm install
+    - npx ng build --configuration production
+    - mv dist/* public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
